@@ -116,7 +116,7 @@ module.exports = function (webpackEnv) {
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
-      },
+      }
     ].filter(Boolean);
     if (preProcessor) {
       loaders.push(
@@ -131,6 +131,12 @@ module.exports = function (webpackEnv) {
           options: {
             sourceMap: true,
           },
+        },
+        {
+          loader: 'sass-resources-loader',
+          options: {
+            resources: path.resolve(__dirname, '../src/styles/common.scss')
+          }
         }
       );
     }

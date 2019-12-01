@@ -1,0 +1,17 @@
+.login-form {
+  margin: 30vh auto 0;
+  height: 300px;
+  width: 400px;
+  padding: 50px 10px;
+  border: 1px solid #999;
+  border-radius: 20px;
+  @extend %flex-between-v;
+  .ant-form-item {
+    width: 80%;
+    text-align: center;
+    margin: 0;
+    &.login-form-button {
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.header {
+  width: 100%;
+  height: 56px;
+  padding-right: 20px;
+  background-color: $theme;
+  color: $color;
+  @extend %flex-between-h;
+  .icon {
+    height: inherit;
+    width: 50px;
+    cursor: pointer;
+    @extend %flex-center;
+    &:hover {
+      background-color: $deepTheme;
+    }
+  }
+}

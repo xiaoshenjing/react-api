@@ -7,3 +7,6 @@ declare module '*.bmp'
 declare module '*.tiff'
 
 declare var process: any
+declare var require: any
+
+declare module 'react-redux'

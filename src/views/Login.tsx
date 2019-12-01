@@ -1,18 +1,21 @@
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import '@/styles/views/Login.scss'
 
 class Login extends React.Component {
     handleSubmit = (e: any) => {
         e.preventDefault();
-        this.props.form.validateFields((err: any, values: any) => {
+        (this.props as any).form.validateFields((err: any, values: any) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                if (values.username === 'admin' && values.password === 'admin')
+                    console.log(123)
             }
         });
     };
 
     render() {
-        const { getFieldDecorator } = this.props.form;
+        const { getFieldDecorator } = (this.props as any).form;
         return (
             <Form onSubmit={this.handleSubmit} className="login-form">
                 <Form.Item>
@@ -36,12 +39,12 @@ class Login extends React.Component {
                         />,
                     )}
                 </Form.Item>
-                <Form.Item>
+                <Form.Item className="login-form-button">
                     {getFieldDecorator('remember', {
                         valuePropName: 'checked',
                         initialValue: true,
                     })(<Checkbox>Remember me</Checkbox>)}
-                    <Button type="primary" htmlType="submit" className="login-form-button">登陆</Button>
+                    <Button type="primary" htmlType="submit">登陆</Button>
                 </Form.Item>
             </Form>
         )

@@ -1,0 +1,23 @@
+/* variables */
+$theme: #003261;
+$deepTheme: #01284d;
+$color: #fff;
+
+%flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex-between-h{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+%flex-between-v{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
