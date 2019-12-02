@@ -5,7 +5,7 @@ const defaultProps: { collapsed: boolean } = {
 }
 
 export default (state = defaultProps, action: any) => {
-    const newState = Object.assign({}, state)
+    const newState = JSON.parse(JSON.stringify(state))
 
     switch (action.type) {
         case enums.CHANGE_COLLAPSED:

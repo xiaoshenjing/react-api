@@ -1,21 +1,15 @@
 import React from 'react'
 import 'antd/dist/antd.css';
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import { Provider } from 'react-redux';
-import store from '../store';
-import App from './App'
-import Login from './Login'
-import NotFound from './NotFound'
+import '@/mock';
+import { PersistGate } from 'redux-persist/integration/react'
+import { Provider } from 'react-redux'
+import store, { persistor } from '@/store'
+import { PageRoutes } from '@/routes'
 
-export default () => (
+export default (props: any) => (
     <Provider store={store}>
-        <Router>
-            <Switch>
-                <Route exact path='/' render={() => <Redirect to='/app' />} />
-                <Route path='/app' component={App} />
-                <Route path='/login' component={Login} />
-                <Route path='/404' component={NotFound} />
-            </Switch>
-        </Router>
+        <PersistGate loading={null} persistor={persistor}>
+            <PageRoutes />
+        </PersistGate>
     </Provider>
 )

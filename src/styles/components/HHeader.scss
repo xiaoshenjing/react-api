@@ -3,7 +3,7 @@
   height: 56px;
   padding-right: 20px;
   background-color: $theme;
-  color: $color;
+  color: $white;
   @extend %flex-between-h;
   .icon {
     height: inherit;
@@ -12,6 +12,12 @@
     @extend %flex-center;
     &:hover {
       background-color: $deepTheme;
+    }
+  }
+  .logout {
+    cursor: pointer;
+    &:hover {
+      color: $grey-light;
     }
   }
 }

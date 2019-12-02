@@ -1,3 +1,3 @@
 export let menu = [
-    { icon: 'pie-chart', title: '帮助文档', key: '/app/help', component: 'HHelp' }
+    { icon: 'question-circle', title: '使用说明', key: '/app/help', component: 'HHelp' }
 ]

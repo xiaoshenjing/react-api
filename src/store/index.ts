@@ -1,6 +1,14 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { persistReducer, persistStore } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk'
+
+const rootPersistConfig = {
+    key: 'root',
+    storage: storage,
+    whitelist: ['common']
+}
 
 const reducerModules = require.context('./reducer', true, /\.ts$/)
 
@@ -29,8 +37,12 @@ const composeEnhancers = composeWithDevTools({
 
 const reducer = combineReducers(asyncReducer)
 
-const store = createStore(reducer, composeEnhancers(
+const persistedReducer = persistReducer(rootPersistConfig, reducer)
+
+const store = createStore(persistedReducer, composeEnhancers(
     applyMiddleware(thunk)
 ));
+
+export const persistor = persistStore(store)
 
 export default store

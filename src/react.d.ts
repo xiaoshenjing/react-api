@@ -10,3 +10,6 @@ declare var process: any
 declare var require: any
 
 declare module 'react-redux'
+declare module 'mockjs'
+declare module 'axios'
+declare module '@/*'

@@ -2,7 +2,7 @@ import React from 'react'
 import '@/styles/components/HSideItem.scss'
 import { Menu, Icon } from 'antd';
 import { connect } from 'react-redux';
-import { menu } from '../routes/config'
+import { menu } from '@/routes/config'
 
 const { SubMenu } = Menu;
 
