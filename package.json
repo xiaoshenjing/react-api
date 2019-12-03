@@ -93,7 +93,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,json,vue}": [
+    "src/**/*.{js,ts,tsx}": [
       "eslint --fix --ext .js,.ts,.tsx --ignore-path .gitignore src/",
       "git add"
     ]
