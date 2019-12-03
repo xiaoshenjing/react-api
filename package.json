@@ -87,6 +87,17 @@
     "test": "node scripts/test.js",
     "fix": "eslint --fix --ext .js,.ts,.tsx --ignore-path .gitignore src/"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,vue}": [
+      "eslint --fix --ext .js,.ts,.tsx --ignore-path .gitignore src/",
+      "git add"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
