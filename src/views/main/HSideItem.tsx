@@ -25,7 +25,12 @@ class HSideItem extends React.Component<Props> {
 
         <SubMenu
           key="sub1"
-          title={ <span> <Icon type="mail" /> <span>Navigation One</span> </span> }
+          title={
+            <span>
+              {" "}
+              <Icon type="mail" /> <span>Navigation One</span>{" "}
+            </span>
+          }
         >
           <Menu.Item key="5">Option 5</Menu.Item>
           <Menu.Item key="6">Option 6</Menu.Item>
