@@ -1,5 +1,5 @@
-import http from './base'
+import http from "./base"
 
-export function getContent(){
-    http.get('helpContent')
+export function getContent() {
+  http.get("helpContent")
 }

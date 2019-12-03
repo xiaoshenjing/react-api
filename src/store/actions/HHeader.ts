@@ -1,5 +1,5 @@
-import enums from '../enums/HHeader'
+import enums from "../enums/HHeader"
 
 export default {
-    changeCollapsed: () => ({ type: enums.CHANGE_COLLAPSED })
+  changeCollapsed: () => ({ type: enums.CHANGE_COLLAPSED })
 }

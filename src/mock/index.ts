@@ -1,11 +1,11 @@
-import Mock from 'mockjs'
+import Mock from "mockjs"
 
 const Random = Mock.Random
-const operate = (url: string, methods: string, data: any) => Mock.mock(RegExp(`/mock/${url}.*`), methods, data);
+const operate = (url: string, methods: string, data: any) => Mock.mock(RegExp(`/mock/${url}.*`), methods, data)
 
 const result: any = {
   code: 1,
-  msg: 'success',
+  msg: "success",
   data: {}
 }
 
@@ -37,17 +37,17 @@ function helpContent() {
 
 function login() {
   let res = JSON.parse(JSON.stringify(result))
-  res.msg = '登陆成功'
+  res.msg = "登陆成功"
   return res
 }
 
 function logout() {
   let res = JSON.parse(JSON.stringify(result))
-  res.msg = '注销成功'
+  res.msg = "注销成功"
   return res
 }
 
-operate("login", "post", login());
-operate("logout", "post", logout());
+operate("login", "post", login())
+operate("logout", "post", logout())
 
-operate("helpContent", "get", helpContent());
+operate("helpContent", "get", helpContent())
