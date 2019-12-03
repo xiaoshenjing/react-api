@@ -27,8 +27,8 @@ class HSideItem extends React.Component<Props> {
           key="sub1"
           title={
             <span>
-              {" "}
-              <Icon type="mail" /> <span>Navigation One</span>{" "}
+              <Icon type="mail" />
+              <span>Navigation One</span>
             </span>
           }
         >
