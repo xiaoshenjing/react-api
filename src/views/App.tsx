@@ -5,11 +5,14 @@ import HHeader from "@/views/main/HHeader"
 import HContent from "@/views/main/HContent"
 import { ContentRoutes } from "@/routes"
 
-class App extends React.Component {
+type Props = {
+  history: any
+}
+class App extends React.Component<Props> {
   render() {
     return (
       <div className="App">
-        <HSideItem />
+        <HSideItem history={this.props.history} />
         <div className="wrapper">
           <HHeader />
           <HContent>
