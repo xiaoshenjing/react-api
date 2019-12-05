@@ -9,6 +9,10 @@ type Props = {
   history: any
 }
 class HSideItem extends React.Component<Props> {
+  nextTo(url: string) {
+    this.props.history.push(url)
+  }
+
   render() {
     let { collapsed } = this.props
 
@@ -23,10 +27,6 @@ class HSideItem extends React.Component<Props> {
         ))}
       </Menu>
     )
-  }
-
-  nextTo(url: string) {
-    this.props.history.push(url)
   }
 }
 
