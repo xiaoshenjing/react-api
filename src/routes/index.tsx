@@ -34,6 +34,7 @@ class _ContentRoutes extends React.Component<contentProps> {
           {menu.map((item: any) => {
             return <Route path={item.key} key={item.key} component={item.component} />
           })}
+          <Redirect to={menu[0].key} />
         </Switch>
       </Router>
     )

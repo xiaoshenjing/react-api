@@ -1,5 +1,5 @@
 import http from "./base"
 
-export function getContent() {
-  http.get("helpContent")
+export function helpContentList() {
+  return http.get("helpContentList")
 }

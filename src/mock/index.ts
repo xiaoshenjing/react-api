@@ -26,15 +26,6 @@ const result: any = {
 //   'Address': Random.province() // 生成地址
 // }
 
-function helpContent() {
-  let res = JSON.parse(JSON.stringify(result))
-  res.data.list = []
-  for (let i = 0; i < 10; i++) {
-    res.data.list.push(`${i + 1}.${Random.paragraph(2, 5)}`)
-  }
-  return res
-}
-
 function login() {
   let res = JSON.parse(JSON.stringify(result))
   res.msg = "登陆成功"
@@ -47,7 +38,30 @@ function logout() {
   return res
 }
 
+function projectItemList() {
+  let res = JSON.parse(JSON.stringify(result))
+  res.data.list = []
+  for (let i = 0; i < Random.integer(9, 20); i++) {
+    res.data.list.push({
+      title: Random.cword(2, 5),
+      date: Random.date(),
+      description: Random.cparagraph(3, 6)
+    })
+  }
+  return res
+}
+
+function helpContentList() {
+  let res = JSON.parse(JSON.stringify(result))
+  res.data.list = []
+  for (let i = 0; i < Random.integer(30, 60); i++) {
+    res.data.list.push(`${i + 1}、 ${Random.cparagraph(2, 5)}`)
+  }
+  return res
+}
+
 operate("login", "post", login())
 operate("logout", "post", logout())
 
-operate("helpContent", "get", helpContent())
+operate("helpContentList", "get", helpContentList())
+operate("projectItemList", "get", projectItemList())

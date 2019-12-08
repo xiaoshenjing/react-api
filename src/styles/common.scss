@@ -5,6 +5,14 @@ $white: #fff;
 $grey-light: #ccc;
 $grey: #999;
 
+$shadow: rgba(100, 100, 100, 0.1);
+
+%text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis; /* 加省略号 */
+  white-space: nowrap; /* 强制不换行 */
+}
+
 %flex-center {
   display: flex;
   align-items: center;

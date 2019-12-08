@@ -1,0 +1,32 @@
+.project-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .project {
+    width: 30%;
+    margin: 10px 1.5%;
+    box-shadow: 0 0 5px 4px $shadow;
+    padding: 10px;
+    text-align: left;
+    .description,
+    .title,
+    .date {
+      margin: 8px 0;
+    }
+    .title {
+      font-size: 14px;
+      @extend %text-overflow;
+    }
+    .description {
+      font-size: 12px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3; /* 显示三行，后面省略 */
+      overflow: hidden;
+    }
+    .date {
+      font-size: 12px;
+      @extend %text-overflow;
+    }
+  }
+}
