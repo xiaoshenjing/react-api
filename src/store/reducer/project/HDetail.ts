@@ -1,15 +1,15 @@
-import enums from "@/store/enums/HHeader"
+import enums from "@/store/enums/project/HDetail"
 
-const defaultProps: { collapsed: boolean } = {
-  collapsed: false
+const defaultProps = {
+  data: {}
 }
 
 export default (state = defaultProps, action: any) => {
   const newState = JSON.parse(JSON.stringify(state))
 
   switch (action.type) {
-    case enums.CHANGE_COLLAPSED:
-      newState.collapsed = !newState.collapsed
+    case enums.GET_ITEM:
+      newState.data = action.data
       return newState
     default:
       return state

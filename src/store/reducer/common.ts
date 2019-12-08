@@ -1,4 +1,4 @@
-import enums from "../enums/common"
+import enums from "@/store/enums/common"
 
 const defaultProps: { login: boolean; user: any } = {
   login: false,

@@ -38,19 +38,6 @@ function logout() {
   return res
 }
 
-function projectItemList() {
-  let res = JSON.parse(JSON.stringify(result))
-  res.data.list = []
-  for (let i = 0; i < Random.integer(9, 20); i++) {
-    res.data.list.push({
-      title: Random.cword(2, 5),
-      date: Random.date(),
-      description: Random.cparagraph(3, 6)
-    })
-  }
-  return res
-}
-
 function helpContentList() {
   let res = JSON.parse(JSON.stringify(result))
   res.data.list = []
@@ -60,8 +47,33 @@ function helpContentList() {
   return res
 }
 
+function projectItemList() {
+  let res = JSON.parse(JSON.stringify(result))
+  res.data.list = []
+  for (let i = 0; i < Random.integer(9, 20); i++) {
+    res.data.list.push({
+      id: i,
+      title: Random.cword(2, 5),
+      date: Random.date(),
+      description: Random.cparagraph(3, 6)
+    })
+  }
+  return res
+}
+
+function projectItem() {
+  let res = JSON.parse(JSON.stringify(result))
+
+  res.data.title = Random.cword(2, 5)
+  res.data.date = Random.date()
+  res.data.description = Random.cparagraph(3, 6)
+
+  return res
+}
+
 operate("login", "post", login())
 operate("logout", "post", logout())
 
 operate("helpContentList", "get", helpContentList())
 operate("projectItemList", "get", projectItemList())
+operate("projectItem", "get", projectItem())

@@ -35,6 +35,6 @@ module.exports = {
     "react/sort-comp": 1,  // 按照具体规范的React.createClass 的生命周期函数书写代码
     "react/jsx-pascal-case": 1, // React模块名使用帕斯卡命名，实例使用骆驼式命名
     "react/display-name": 1,
-    semi: [2, "never"]
+    semi: [1, "never"]
   }
 };

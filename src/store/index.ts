@@ -15,7 +15,9 @@ const reducerModules = require.context("./reducer", true, /\.ts$/)
 const asyncReducer: any = {}
 reducerModules.keys().map((item: any) => {
   const value = reducerModules(item)
-  asyncReducer[item.match(/\/(\S*)\./)[1]] = value.default
+  let name = item.match(/\/(\S*)\./)[1].split("/")
+  name = name[name.length - 1]
+  asyncReducer[name] = value.default
   return false
 })
 

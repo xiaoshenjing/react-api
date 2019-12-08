@@ -1,4 +1,4 @@
-import enums from "../enums/HProject"
+import enums from "@/store/enums/project/HProject"
 import { projectItemList } from "@/api/project"
 
 export default {

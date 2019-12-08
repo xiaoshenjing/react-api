@@ -97,7 +97,7 @@ class Http {
     }
   }
 
-  async get(url: string, params = null, full = false) {
+  async get(url: string, params?: any, full = false) {
     this.check()
     const res = await this.http.get(url, { params })
     return Promise.resolve(this.fillter(res, full))

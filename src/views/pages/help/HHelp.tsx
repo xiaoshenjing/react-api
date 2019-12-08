@@ -1,16 +1,20 @@
 import React from "react"
 import Wrapper from "@/hc/ContentWrapper"
 import { connect } from "react-redux"
-import actionHHelp from "@/store/actions/HHelp"
+import actionHHelp from "@/store/actions/help/HHelp"
 
 type Props = {
   getContentList: () => {}
   list: any
 }
 class HHelp extends React.Component<Props> {
-  render() {
-    const { list, getContentList } = this.props
+  UNSAFE_componentWillMount() {
+    const { getContentList } = this.props
     getContentList()
+  }
+
+  render() {
+    const { list } = this.props
 
     return (
       <div>

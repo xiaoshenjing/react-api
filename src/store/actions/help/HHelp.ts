@@ -1,4 +1,4 @@
-import enums from "../enums/HHelp"
+import enums from "@/store/enums/help/HHelp"
 import { helpContentList } from "@/api/help"
 
 export default {

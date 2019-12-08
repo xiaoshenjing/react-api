@@ -1,4 +1,4 @@
-import enums from "../enums/common"
+import enums from "@/store/enums/common"
 
 export default {
   login: () => ({ type: enums.LOGIN }),

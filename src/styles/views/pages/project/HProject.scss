@@ -8,6 +8,8 @@
     box-shadow: 0 0 5px 4px $shadow;
     padding: 10px;
     text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
     .description,
     .title,
     .date {
@@ -21,12 +23,16 @@
       font-size: 12px;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3; /* 显示三行，后面省略 */
+      -webkit-line-clamp: 2; /* 显示三行，后面省略 */
       overflow: hidden;
     }
     .date {
       font-size: 12px;
       @extend %text-overflow;
+    }
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 5px 6px $shadow;
     }
   }
 }

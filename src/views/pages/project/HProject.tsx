@@ -1,22 +1,31 @@
 import React from "react"
-import "@/styles/views/pages/HProject.scss"
+import "@/styles/views/pages/project/HProject.scss"
 import Wrapper from "@/hc/ContentWrapper"
 import { connect } from "react-redux"
-import actionHProject from "@/store/actions/HProject"
+import actionHProject from "@/store/actions/project/HProject"
 
 type Props = {
   list: any
   getProjectList: () => {}
+  history: any
 }
 class HProject extends React.Component<Props> {
-  render() {
-    const { list, getProjectList } = this.props
+  UNSAFE_componentWillMount() {
+    const { getProjectList } = this.props
     getProjectList()
+  }
+
+  next(id: number) {
+    this.props.history.push(`/app/project/detail/${id}`)
+  }
+
+  render() {
+    const { list } = this.props
 
     return (
       <div className="project-wrapper">
         {list.map((item: any, i: number) => (
-          <div className="project" key={i}>
+          <div className="project" key={i} onClick={this.next.bind(this, item.id)}>
             <div className="title">{item.title}</div>
             <div className="description">{item.description}</div>
             <div className="date">{item.date}</div>
